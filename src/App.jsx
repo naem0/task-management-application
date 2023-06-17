@@ -86,12 +86,14 @@ const App = () => {
           type="text"
           placeholder="Title"
           value={newTask.title}
+          required
           onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
           className="border border-gray-400 rounded px-4 py-2 mr-2"
         />
         <input
           type="text"
           placeholder="Description"
+          required
           value={newTask.description}
           onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
           className="border border-gray-400 rounded px-4 py-2 mr-2"
@@ -107,7 +109,7 @@ const App = () => {
               <th>Task Name</th>
               <th>Task Description</th>
               <th>Status</th>
-              <th>Status Updat</th>
+              <th>Status Update</th>
               <th>Delete</th>
             </tr>
           </thead>
