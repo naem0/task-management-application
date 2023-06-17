@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-const serverURL = 'http://localhost:5000';
+const serverURL = 'https://task-management-application-server-kappa.vercel.app';
 const api = axios.create({ baseURL: serverURL });
 
 const App = () => {
@@ -112,9 +112,9 @@ const App = () => {
             </tr>
           </thead>
           <tbody>
-            {tasks.map(task => (
+            {tasks.map((task, indx) => (
               <tr key={task._id}>
-                <th>1</th>
+                <th>{indx + 1}</th>
                 <td className='font-semibold'>{task.title}</td>
                 <td>{task.description}</td>
                 <td className={`inline-block rounded px-2 py-1 mt-2 ${task.status === 'completed' ? 'bg-green-500 text-white' : 'bg-gray-500 text-gray-100'}`}>{task.status}</td>
